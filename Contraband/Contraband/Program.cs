@@ -28,7 +28,47 @@ namespace Contraband
             {
                 if(rng.Next(2) != 0)
                 {
+                    cars.Add(new ContrabandCar());
+                }
+                else
+                {
+                    cars.Add(new CleanCar());
+                }
+            }
 
+            Console.ReadLine();
+
+            while (true)
+            {
+                int amount = cars.Count - 1;
+                Console.WriteLine("Vilken bil vill du kolla på?");
+
+                int n = 0;
+                while (n <= 1)
+                {
+                    if (int.TryParse(Console.ReadLine(), out n) && n > 0)
+                    {
+                        continue;
+                    }
+                    Console.WriteLine("Icke sa micke! försök igen!!");
+                }
+
+                if(!cars[n].alreadyChecked)
+                {
+                    Console.WriteLine("Kollar...");
+                    if(!cars[n].Examine())
+                    {
+                        Console.WriteLine("Ingenting här!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ah! Hittade: " + cars[n].contrabandAmount + " kontraband");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Redan vart här!");
                 }
             }
 

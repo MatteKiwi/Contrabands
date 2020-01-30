@@ -8,6 +8,7 @@ namespace Contraband
 {
     class CleanCar : Car
     {
+        //metod cleancar som säger generar ett antal passangerare samt inget kontraband
         public CleanCar()
         {
             passengers = gen.Next(1, 4);
