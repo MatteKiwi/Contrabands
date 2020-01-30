@@ -36,33 +36,33 @@ namespace Contraband
                 }
             }
 
-            Console.ReadLine();
+           // Console.ReadLine();
 
             while (true)
             {
                 int amount = cars.Count - 1;
-                Console.WriteLine("Vilken bil vill du kolla på?");
+                Console.WriteLine("Vilken bil vill du kolla på? [0 - " + amount + "]");
 
-                int n = 0;
-                while (n <= 1)
+                int x = 0;
+                while (x <= 1)
                 {
-                    if (int.TryParse(Console.ReadLine(), out n) && n > 0)
+                    if (int.TryParse(Console.ReadLine(), out x) && x > 0)
                     {
                         continue;
                     }
                     Console.WriteLine("Icke sa micke! försök igen!!");
                 }
 
-                if(!cars[n].alreadyChecked)
+                if(!cars[x].alreadyChecked)
                 {
                     Console.WriteLine("Kollar...");
-                    if(!cars[n].Examine())
+                    if(!cars[x].Examine())
                     {
                         Console.WriteLine("Ingenting här!");
                     }
                     else
                     {
-                        Console.WriteLine("Ah! Hittade: " + cars[n].contrabandAmount + " kontraband");
+                        Console.WriteLine("Ah! Hittade: " + cars[x].contrabandAmount + " kontraband");
                     }
 
                 }
