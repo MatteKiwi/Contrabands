@@ -10,6 +10,7 @@ namespace Contraband
     {
         static void Main(string[] args)
         {
+            Console.ReadLine();
         }
     }
 }
