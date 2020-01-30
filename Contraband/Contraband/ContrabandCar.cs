@@ -8,7 +8,8 @@ namespace Contraband
 {
     class ContrabandCar : Car
     {
-      public ContrabandCar()
+        //metod som säger generar ett antal passangerare samt kontraband
+        public ContrabandCar()
         {
             passengers = gen.Next(1, 3);
             contrabandAmount = gen.Next(1, 5);

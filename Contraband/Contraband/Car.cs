@@ -24,7 +24,7 @@ namespace Contraband
             }
             return false;
         }
-
+        //en static av car så att man kan skapa dom med random
         static Car()
         {
             gen = new Random();
